@@ -41,12 +41,12 @@ def is_ipv4(ip):
 
 def loadSet(infile):
 	cidrSet = set([])
-	print("[+] Loading CIDR blocks from %s" % results.infile)
+	if verbose: print("[+] Loading CIDR blocks from %s" % results.infile)
 	for line in infile:
 		line = line.strip()
 		cidrSet.add(line)
 	cidrSet = IPSet(cidrSet)
-	print("[+] done")
+	if verbose: print("[+] done")
 	return cidrSet
 
 if is_ipv4(ipaddr):
